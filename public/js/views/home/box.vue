@@ -92,7 +92,7 @@ export default {
     color: red;
 }
 .house-time{
-    color: #ddd;
+    color: #868282;
     font-size: 0.8rem;
 }
 </style>

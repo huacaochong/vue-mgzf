@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="container">
+        <search></search>
         <div class="main">
-            <search></search>
             <banner></banner>
             <menus></menus>
             <template v-for="item in houseHomeList">
@@ -41,8 +41,14 @@ import footers from './home/footer.vue';
     }
 </script>
 <style scoped>
+.container{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction:column;
+}
 .main{
-    margin-bottom: 2.8rem;
+    flex:1;
+    overflow: scroll;
 }
 .box{
     display: block;

@@ -4,7 +4,8 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin'); //css单独打包
-
+const extractCSS = new ExtractTextPlugin('css/[name].css?[contenthash]')
+const cssLoader = extractCSS.extract(['style-loader', 'css-loader'])
 const root = path.resolve(__dirname, './') // 项目的根目录绝对路径
 
 
@@ -16,9 +17,9 @@ module.exports = {
         index: "./index.js"
     },
     output: {
-        path: __dirname + "/dist/js/",
+        path: __dirname + "/dist/assets",
         filename: "[name].min.js",
-        publicPath: './js/' // 设置引用路径 如ttf等文件
+        publicPath: '/assets/' // 设置引用路径 如ttf等文件
     },
     plugins: [
         // 抽取公共方法
@@ -44,6 +45,7 @@ module.exports = {
             hash: true
         }),
         new ExtractTextPlugin('[name].css'),
+        extractCSS
     ],
     resolve: {
         extensions: ['.js', '.vue', '.css'],
@@ -74,17 +76,22 @@ module.exports = {
                 loader: 'vue-loader'
             }, {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                loader: ExtractTextPlugin.extract({fallback:"style-loader",use:"css-loader"})
+                // use: ExtractTextPlugin.extract({fallback:"style-loader",use:["css-loader"]})
             }, {
                 test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                query: {
+                    name: 'incofont/[name].[hash:8].[ext]'
+                }
             }, {
                 test: /\.(png|jpe?g|gif|svg)(\?\S*)?$/,
                 loader: 'file-loader',
                 query: {
-                  name: '[name].[ext]?[hash]'
+                    limit: 8192,
+                    name: 'images/[name].[hash:8].[ext]'
                 }
-              }
+            }
         ]
     }
 };

@@ -26,9 +26,12 @@ export default {
 </script>
 <style scoped>
 .footer{
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;
+    bottom: 0;*/
     width: 100%;
+    /*height: 2.8rem;*/
+    /*flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto*/
+    flex: 0 0 2.8rem;
 }
 .footer-box{
     display: flex;
