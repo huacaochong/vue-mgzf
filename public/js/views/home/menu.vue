@@ -11,11 +11,11 @@
 <script>
 const menuList = [
     {
-        path: '/list?labels=1',
+        path: '/list?reload=1&labels=1',
         name: '整租',
         imgUrl: require('../../../image/menu/zf.png')
     }, {
-        path: '/list?labels=2',
+        path: '/list?reload=1&labels=2',
         name: '合租',
         imgUrl: require('../../../image/menu/hz.png')
     }, {
