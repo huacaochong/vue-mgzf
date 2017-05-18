@@ -17,7 +17,7 @@ export default new Vuex.Store({
         count: 0,
         houseList: [],
         houseHomeList: [],
-        $404Msg: '我的天啦，404了'
+        $404Msg: 'word god, 404啦'
     },
     getting,
     actions,

@@ -1,5 +1,5 @@
 <template>
-    <div>{{word god, 404啦}}</div>
+    <div>{{msg}}</div>
 </template>
 <script>
     export default {

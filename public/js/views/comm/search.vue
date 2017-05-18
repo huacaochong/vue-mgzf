@@ -47,7 +47,14 @@ export default {
         // @keyup.13
         // 键盘代码13  回车 or 搜索 按钮
         submitFn({target}) {
-            this.$router.push('/list?houseName=' + target.value)
+            if(this.$route.query.reload == 1) {
+                this.$router.replace('/list?houseName=' + target.value);
+                this.$router.go(0)
+            } else {
+                this.$router.push('/list?reload=1&houseName=' + target.value)
+            }
+            
+            // this.$router.push('/list?houseName=' + target.value)
             //this.$router.go({name: 'user', params: {userId: 1}});
         }
     },
