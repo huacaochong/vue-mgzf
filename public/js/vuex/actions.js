@@ -1,10 +1,13 @@
 import { houseList } from '../json/data.js';
 export default {
-    getHouseList: async function({state}){
+    getHouseList: async function({state}, params){
         // await this.axios.post('/getHouseList', {userName, userPass});
         let dao = await sleep(),
-            houseList = dao.houseList();
-        state.houseList = houseList;
+            houseName = params.houseName || '',
+            arr = [];
+        arr.push({name: houseName || '长征佳苑', path: '/tj', list: dao.houseList(params)});
+        console.log(arr);
+        state.houseList = arr;
     },
     getHouseHome: async function({state}){
         let dao = await sleep(),

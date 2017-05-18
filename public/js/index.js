@@ -11,7 +11,11 @@ import '../css/iconfont/iconfont.css';
 Vue.use(VueRouter);
 Vue.use(axios);
 
-const router = new VueRouter({routes});
+const router = new VueRouter({
+    // 默认hash
+    // mode: 'history',
+    routes
+});
 
 const app = new Vue({
     el: '#app',

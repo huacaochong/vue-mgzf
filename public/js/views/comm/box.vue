@@ -9,7 +9,7 @@
             <div class="house-right">
                 <h3>{{item.addr + '-' + item.houseName}}</h3>
                 <span class="house-info">{{item.layout + '-' + item.area+'m²'}}</span>
-                <span class="house-addr">位置 {{item.detailedAddress}}</span>
+                <span class="house-addr">位置 {{item.detailedAddress.join(' ')}}</span>
                 <div class="house-info2">
                     <span class="house-label">{{item.label}}</span>
                     <span class="house-price">{{item.price}}元/月</span>

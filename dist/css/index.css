@@ -48,11 +48,11 @@ html,body,#app,.container{
     html {font-size: 28px;}
 }
 @font-face {font-family: "iconfont";
-  src: url(/assets/incofont/iconfont.b0dca1f4.eot); /* IE9*/
-  src: url(/assets/incofont/iconfont.b0dca1f4.eot#iefix) format('embedded-opentype'), 
-  url(/assets/incofont/iconfont.309316e4.woff) format('woff'), 
-  url(/assets/incofont/iconfont.977a3e81.ttf) format('truetype'), 
-  url(/assets/incofont/iconfont.fb499f77.svg#iconfont) format('svg'); /* iOS 4.1- */
+  src: url(/js/../incofont/iconfont.be7bff6a.eot); /* IE9*/
+  src: url(/js/../incofont/iconfont.be7bff6a.eot#iefix) format('embedded-opentype'), 
+  url(/js/../incofont/iconfont.7bb09887.woff) format('woff'), 
+  url(/js/../incofont/iconfont.0aa463b0.ttf) format('truetype'), 
+  url(/js/../incofont/iconfont.cf1112d3.svg#iconfont) format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -84,6 +84,8 @@ html,body,#app,.container{
 .icon-zufang:before { content: "\E68D"; }
 
 .icon-zufang1:before { content: "\E613"; }
+
+.icon-fanhui:before { content: "\E601"; }
 
 .icon-hezu:before { content: "\E8ED"; }
 

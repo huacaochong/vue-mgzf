@@ -1,6 +1,11 @@
 <template>
     <div class="container">
-        <search></search>
+        <search>
+            <template>
+                <span>上海</span>
+                <i class="iconfont icon-xiala"></i>
+            </template>
+        </search>
         <div class="main">
             <banner></banner>
             <menus></menus>
@@ -18,13 +23,18 @@
 </template>
 <script>
 import {mapState} from 'vuex';
-import search from './home/search.vue';
+import search from './comm/search.vue';
+import box from './comm/box.vue';
 import banner from './home/banner.vue';
 import menus from './home/menu.vue';
-import box from './home/box.vue';
 import footers from './home/footer.vue';
     export default {
         name: 'home',
+        data(){
+            return {
+                a: 1
+            }
+        },
         components: {
             search,
             banner,

@@ -1,12 +1,14 @@
 <template>
     <div class="search">
-        <div v-bind:style="{width: !panelShow ? '4rem' : '0'}" class="search-left">
-            <span>上海</span>
-            <i class="iconfont icon-xiala"></i>
+        <div v-bind:style="{width: !panelShow ? (leftWidth || 5) + 'rem' : '0'}" class="search-left">
+            <slot></slot>
         </div>
         <div class="search-input">
-            <i class="iconfont icon-sousuo"></i>
-            <input type="text" v-on:focus.self="show" placeholder="小区、商圈、地铁">
+            <form action="#" onSubmit="return false">
+                <i class="iconfont icon-sousuo"></i>
+                <input @keyup.13="submitFn($event)" type="search"
+                    v-on:focus.self="show" placeholder="小区、商圈、地铁">
+            </form>
         </div>
         <div :style="{width: panelShow ? '3rem' : '0'}"  @click="hide" class="search-cannel">取消</div>
         <search-panel
@@ -23,6 +25,7 @@ export default {
             panelShow: null
         }
     },
+    props: ['leftWidth'],
     computed: {
         animation() {
             return this.panelShow == null ? '' : this.panelShow ? 'begin' : 'end'
@@ -40,7 +43,17 @@ export default {
             // obj.style.animation="end .6s forwards"
             // setTimeout( () => this.panelShow = false , 500)
             this.panelShow = false;
+        },
+        // @keyup.13
+        // 键盘代码13  回车 or 搜索 按钮
+        submitFn({target}) {
+            this.$router.push('/list?houseName=' + target.value)
+            //this.$router.go({name: 'user', params: {userId: 1}});
         }
+    },
+    // vue-router 导航钩子
+    beforeRouteLeave(){
+
     }
 }
 </script>
@@ -72,13 +85,17 @@ export default {
     }
     .search-left{
         /*margin-right: 1rem;*/
-        width: 4rem;
+        /*width: 5rem;*/
+        text-align: center;
     }
     .search-cannel{
         margin-left: 1rem;
         color: #666;
         width: 3rem;
     }
+
+    /*移除搜索框的叉叉图标*/
+    /*::-webkit-search-cancel-button { display: none; }*/
     .search-input{
         flex-grow: 2;
         width: 100%;

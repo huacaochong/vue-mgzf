@@ -15,10 +15,9 @@ export default new Vuex.Store({
     // 组件调用store.state.xxx
     state: {
         count: 0,
-        indexMsg: '我是vuex.store.state indexMsg属性',
-        $404Msg: '我是vuex.store.state msg属性',
         houseList: [],
-        houseHomeList: []
+        houseHomeList: [],
+        $404Msg: '我的天啦，404了'
     },
     getting,
     actions,
