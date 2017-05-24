@@ -35,7 +35,7 @@ $ npm run
 按照app首页写一个实现demo
 
 ### 目录结构
-.
+
 ├── dist
 │   ├── css
 │   ├── images
