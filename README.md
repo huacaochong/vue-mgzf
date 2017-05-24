@@ -36,19 +36,19 @@ $ npm run
 
 ### 目录结构
 
-├── dist
-│   ├── css
-│   ├── images
-│   ├── iconfont
-│   ├── js
-│   └── index.html
-├── public
-│   ├── css
-│   ├── image
-│   ├── js
-│   ├── template
-│   └── index.html
-└── app.js
+├── dist  
+│   ├── css  
+│   ├── images  
+│   ├── iconfont  
+│   ├── js  
+│   └── index.html  
+├── public  
+│   ├── css  
+│   ├── image  
+│   ├── js  
+│   ├── template  
+│   └── index.html  
+└── app.js  
 
 ```
 
