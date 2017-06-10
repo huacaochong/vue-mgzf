@@ -5,7 +5,14 @@
         </search>
         <template v-for="item in houseList">
             <box v-bind:list="item.list">
-
+                <div class="if-search">
+                    <ul>
+                        <li>地铁区域</li>
+                        <li>价格</li>
+                        <li>推荐排序</li>
+                        <li>更多筛选</li>
+                    </ul>
+                </div>
             </box>
         </template>
     </div>
@@ -38,5 +45,23 @@ import box from './comm/box.vue';
     display: -webkit-flex; /* Safari */
     display: flex;
     flex-direction:column;
+}
+.if-search{
+    display: block;
+    border-bottom: 1px solid #ededed;
+}
+.if-search ul{
+    display: flex;
+}
+.if-search li{
+    flex: 1;
+    text-align: center;
+    font-size: .8rem;
+    color: #9f9f9f;
+}
+.if-search li ~ li:before{
+    content: '|';    
+    float: left;
+
 }
 </style>
