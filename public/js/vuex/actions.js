@@ -1,3 +1,4 @@
+// 异步提交
 import { houseList } from '../json/data.js';
 export default {
     getHouseList: async function({state}, params){

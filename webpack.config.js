@@ -50,6 +50,7 @@ module.exports = {
             'vue$': 'vue/dist/vue.common.js'
         }
     },
+    watch: true,
     module: {
         loaders: [
             {

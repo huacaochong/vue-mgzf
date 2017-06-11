@@ -4,7 +4,6 @@ import VueRouter from 'vue-router';
 import store from './vuex/store.js';
 import routes from './router/route.js';
 import axios from './common/axios.js';
-
 import '../css/layout.css';
 import '../css/iconfont/iconfont.css';
 

@@ -7,7 +7,7 @@
             <box v-bind:list="item.list">
                 <div class="if-search">
                     <ul>
-                        <li>地铁区域</li>
+                        <li @click="ifsearch">地铁区域</li>
                         <li>价格</li>
                         <li>推荐排序</li>
                         <li>更多筛选</li>
@@ -34,8 +34,17 @@ import box from './comm/box.vue';
             this.$store.dispatch('getHouseList', this.$route.query || {});
         },
         methods: {
+            // ...mapActions([
+            //     'some/nested/module/list',
+            // ])
             back() {
                 this.$router.back();
+            },
+            ifsearch(){
+                // mutations
+                // this.$store.commit('getHouseHome');
+                // 除了state分模块  其他都不分
+                this.$store.dispatch('getList')
             }
         }
     }
@@ -52,6 +61,7 @@ import box from './comm/box.vue';
 }
 .if-search ul{
     display: flex;
+    margin-bottom: .8rem;
 }
 .if-search li{
     flex: 1;

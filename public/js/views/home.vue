@@ -46,7 +46,7 @@ import footers from './home/footer.vue';
             'houseHomeList': 'houseHomeList'
         }),
         mounted() {
-            this.$store.dispatch('getHouseHome')
+            this.$store.dispatch('getHouseHome');
         }
     }
 </script>
