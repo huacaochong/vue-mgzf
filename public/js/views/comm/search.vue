@@ -53,7 +53,7 @@ export default {
             } else {
                 this.$router.push('/list?reload=1&houseName=' + target.value)
             }
-            
+
             // this.$router.push('/list?houseName=' + target.value)
             //this.$router.go({name: 'user', params: {userId: 1}});
         }

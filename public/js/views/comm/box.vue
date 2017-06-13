@@ -36,10 +36,8 @@ export default {
 <style scoped>
 .box{
     display: block;
-    margin-top: .8rem;
     background-color: #fff;
 }
-
 
 .box-item{
     padding: .8rem 1rem;

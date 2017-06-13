@@ -1,11 +1,13 @@
 'use strict';
 import Vue from 'vue';
 import Vuex from 'vuex';
-import getting from './gettings.js';
+import getters from './getters.js';
 import actions from './actions.js';
 import mutations from './mutations.js';
 
-import listStore from './list/store';
+import listStore from './modules/list.js';
+import metroStore from './modules/metro.js';
+import conditionStore from './modules/condition.js';
 
 Vue.use(Vuex);
 
@@ -15,7 +17,9 @@ let store = new Vuex.Store({
     // PRODUCTION  webpack.config 中 new webpack.DefinePlugin定义
     plugins: !!PRODUCTION ? [createLogger()] : [],
     modules:{
-        list: listStore
+        list: listStore,
+        condition: conditionStore,
+        metro: metroStore
     },
     // 组件调用store.state.xxx
     state: {
@@ -24,7 +28,7 @@ let store = new Vuex.Store({
         houseHomeList: [],
         $404Msg: 'word god, 404啦'
     },
-    getting,
+    getters,
     actions,
     mutations
 });

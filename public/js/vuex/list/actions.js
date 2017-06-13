@@ -1,5 +1,8 @@
+function getMetroList(){
+
+}
 export default {
-    getList: async function({ dispatch, commit, getters, rootGetters }){
-        console.log(dispatch, commit, getters, rootGetters)
+    getMetroList: async function({ state, dispatch, commit, getters, rootGetters }){
+        console.log(dispatch, commit, getters, rootGetters);
     }
 }

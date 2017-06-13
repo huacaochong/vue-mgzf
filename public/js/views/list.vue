@@ -3,16 +3,9 @@
         <search leftWidth="2">
             <i class="iconfont icon-fanhui" @click="back"></i>
         </search>
+        <condition></condition>
         <template v-for="item in houseList">
             <box v-bind:list="item.list">
-                <div class="if-search">
-                    <ul>
-                        <li @click="ifsearch">地铁区域</li>
-                        <li>价格</li>
-                        <li>推荐排序</li>
-                        <li>更多筛选</li>
-                    </ul>
-                </div>
             </box>
         </template>
     </div>
@@ -21,16 +14,18 @@
 import {mapState} from 'vuex';
 import search from './comm/search.vue';
 import box from './comm/box.vue';
+import condition from './comm/condition.vue';
     export default {
         name: 'list',
         components: {
             search,
-            box
+            box,
+            condition
         },
         computed: mapState({
             'houseList': 'houseList'
         }),
-        mounted(){
+        mounted(){ // 编译好的html挂在到页面完成后
             this.$store.dispatch('getHouseList', this.$route.query || {});
         },
         methods: {
@@ -39,12 +34,6 @@ import box from './comm/box.vue';
             // ])
             back() {
                 this.$router.back();
-            },
-            ifsearch(){
-                // mutations
-                // this.$store.commit('getHouseHome');
-                // 除了state分模块  其他都不分
-                this.$store.dispatch('getList')
             }
         }
     }
@@ -54,24 +43,5 @@ import box from './comm/box.vue';
     display: -webkit-flex; /* Safari */
     display: flex;
     flex-direction:column;
-}
-.if-search{
-    display: block;
-    border-bottom: 1px solid #ededed;
-}
-.if-search ul{
-    display: flex;
-    margin-bottom: .8rem;
-}
-.if-search li{
-    flex: 1;
-    text-align: center;
-    font-size: .8rem;
-    color: #9f9f9f;
-}
-.if-search li ~ li:before{
-    content: '|';    
-    float: left;
-
 }
 </style>
