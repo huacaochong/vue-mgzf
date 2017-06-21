@@ -4,7 +4,7 @@
 <script>
 export default {
     name: 'menu',
-    props: ['showTag'],
+    props: ['showTag']
 }
 </script>
 <style scoped>

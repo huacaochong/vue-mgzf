@@ -27,6 +27,10 @@ export default {
             showTag: state => state.showTag
         })
     },
+    destroyed(){
+        // 销毁前(离开前)隐藏pannel
+        this.updateShowTag(null);
+    },
     methods: {
         ...mapMutations('condition', {
             'updateShowTag': 'updateShowTag'

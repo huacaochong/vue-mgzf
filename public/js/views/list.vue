@@ -3,7 +3,7 @@
         <search leftWidth="2">
             <i class="iconfont icon-fanhui" @click="back"></i>
         </search>
-        <condition></condition>
+        <condition v-if="showCondition"></condition>
         <template v-for="item in houseList">
             <box v-bind:list="item.list">
             </box>
@@ -17,6 +17,17 @@ import box from './comm/box.vue';
 import condition from './comm/condition.vue';
     export default {
         name: 'list',
+        data(){
+            return {
+                showCondition: true // false
+            }
+        },
+        // created(){
+        //     let {labels} = this.$route.query;
+        //     if(labels) {
+        //         this.showCondition = true;
+        //     }
+        // },
         components: {
             search,
             box,
